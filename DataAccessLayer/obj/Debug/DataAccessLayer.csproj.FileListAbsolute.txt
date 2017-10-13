@@ -1,0 +1,14 @@
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\alek.hristov\Source\Repos\DALLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

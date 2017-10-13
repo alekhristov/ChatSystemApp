@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChatSystemAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Conversation">
+    <Key>
+      <PropertyRef Name="ConversationID" />
+    </Key>
+    <Property Name="ConversationID" Type="Int32" Nullable="false" />
+    <Property Name="User1ID" Type="Int32" Nullable="false" />
+    <Property Name="User2ID" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_Conversations" FromRole="Conversations" ToRole="Messages" />
+    <NavigationProperty Name="Users" Relationship="Self.Users_Conversations" FromRole="Conversations" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" />
+    <Property Name="Message1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SenderUserID" Type="Int32" Nullable="false" />
+    <Property Name="SentTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConversationID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Conversation" Relationship="Self.FK_Messages_Conversations" FromRole="Messages" ToRole="Conversations" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Conversations" Relationship="Self.Users_Conversations" FromRole="Users" ToRole="Conversations" />
+  </EntityType>
+  <Association Name="FK_Messages_Conversations">
+    <End Role="Conversations" Type="Self.Conversation" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conversations">
+        <PropertyRef Name="ConversationID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="ConversationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Users_Conversations">
+    <End Role="Conversations" Type="Self.Conversation" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ChatSystemAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Conversations" EntityType="Self.Conversation" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Messages_Conversations" Association="Self.FK_Messages_Conversations">
+      <End Role="Conversations" EntitySet="Conversations" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="Users_Conversations" Association="Self.Users_Conversations">
+      <End Role="Conversations" EntitySet="Conversations" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

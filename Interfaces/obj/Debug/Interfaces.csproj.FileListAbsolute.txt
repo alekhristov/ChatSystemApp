@@ -1,0 +1,12 @@
+c:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\bin\Debug\Interfaces.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\bin\Debug\Interfaces.pdb
+c:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+c:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\obj\Debug\Interfaces.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\obj\Debug\Interfaces.pdb
+C:\Users\alek.hristov\Source\Repos\DALLayer\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Interfaces\obj\Debug\Interfaces.pdb

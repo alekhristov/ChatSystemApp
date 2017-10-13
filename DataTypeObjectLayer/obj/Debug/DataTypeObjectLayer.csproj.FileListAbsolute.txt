@@ -1,0 +1,16 @@
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.csprojResolveAssemblyReference.cache
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.csproj.CoreCompileInputs.cache
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\bin\Debug\DataTypeObjectLayer.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\bin\Debug\DataTypeObjectLayer.pdb
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\bin\Debug\Interfaces.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\bin\Debug\Interfaces.pdb
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.dll
+c:\Users\alek.hristov\Source\Repos\DALLayer\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\bin\Debug\DataTypeObjectLayer.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\bin\Debug\DataTypeObjectLayer.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\bin\Debug\Interfaces.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\bin\Debug\Interfaces.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.csproj.CoreCompileInputs.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataTypeObjectLayer\obj\Debug\DataTypeObjectLayer.pdb

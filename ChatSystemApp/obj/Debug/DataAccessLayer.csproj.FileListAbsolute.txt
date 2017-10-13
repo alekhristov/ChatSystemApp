@@ -1,0 +1,2 @@
+c:\Users\alek.hristov\Source\Repos\DALLayer\DB\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+c:\Users\alek.hristov\Source\Repos\DALLayer\DB\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
