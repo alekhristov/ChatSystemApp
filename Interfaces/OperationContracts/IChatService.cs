@@ -1,34 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Interfaces.OperationContracts
 {
+    [ServiceContract(SessionMode = SessionMode.Allowed)]
     public interface IChatService
     {
-        IConnectResponse Connect(IConnectRequest request);
+        [OperationContract]
+        ConnectResponse Connect(ConnectRequest request);
 
-        IChatHistoryResponse GetChatHistory(IChatHistoryRequest request)
-        {
-            var list<Messages> = ...
-            var list<IMessages> mapper.Convert(list<Messages>);
-        }
+        [OperationContract]
+        SendMessageResponse SendMessage(SendMessageRequest request);
+
+        [OperationContract]
+        GetOnlineUsersResponse GetOnlineUsers(GetOnlineUsersRequest request);
+
+        [OperationContract]
+        GetChatHistoryResponse GetChatHistory(GetChatHistoryRequest request);
+
+        [OperationContract]
+        DisconnectResponse Disconnect(DisconnectRequest request);
     }
 
-    class ChatHistoryResponse
-    {
-        IList<IMessages>
-    }
-
-    interface IMessages
-    {
-        public string Message { get; set; }
-    }
-
-    public class Message : IMessages
-    {
-        public string Message { get; set; }
-    }
 }
