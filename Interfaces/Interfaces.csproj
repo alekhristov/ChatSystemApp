@@ -53,8 +53,6 @@
     <Compile Include="OperationContracts\IChatService.cs" />
     <Compile Include="OperationContracts\SendMessageToAllRequest.cs" />
     <Compile Include="OperationContracts\SendMessageToAllResponse.cs" />
-    <Compile Include="OperationContracts\StartAConversationRequest.cs" />
-    <Compile Include="OperationContracts\StartAConversationResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
