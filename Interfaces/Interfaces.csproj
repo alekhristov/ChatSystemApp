@@ -42,26 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OperationContracts\ConnectRequest.cs" />
-    <Compile Include="OperationContracts\DisconnectRequest.cs" />
-    <Compile Include="OperationContracts\ConnectResponse.cs" />
-    <Compile Include="OperationContracts\DisconnectResponse.cs" />
-    <Compile Include="OperationContracts\GetChatHistoryRequest.cs" />
-    <Compile Include="OperationContracts\GetChatHistoryResponse.cs" />
-    <Compile Include="OperationContracts\GetOnlineUsersRequest.cs" />
-    <Compile Include="OperationContracts\GetOnlineUsersResponse.cs" />
     <Compile Include="OperationContracts\IChatService.cs" />
-    <Compile Include="OperationContracts\SendMessageToAllRequest.cs" />
-    <Compile Include="OperationContracts\SendMessageToAllResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypeObjects\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataTypeObjectLayer\DataTypeObjectLayer.csproj">
-      <Project>{4af41300-ba24-4d8a-bd1d-5a9ceabaf984}</Project>
-      <Name>DataTypeObjectLayer</Name>
+    <ProjectReference Include="..\ServiceModels\ServiceModels.csproj">
+      <Project>{2f4a02db-5637-4e0a-88de-6df8d6c7a508}</Project>
+      <Name>ServiceModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

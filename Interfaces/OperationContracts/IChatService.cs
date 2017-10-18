@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interfaces.OperationContracts
+namespace Alek.ChatService
 {
     [ServiceContract(SessionMode = SessionMode.Allowed)]
     public interface IChatService

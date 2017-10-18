@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DB
+namespace Alek.ChatService
 {
     class Program
     {
         static void Main(string[] args)
         {
+            var dbContext = new ChatSystemAppDBContext();
+
+            var userNames = dbContext.Users.Select(u => u.Username);
+
+            Console.WriteLine(string.Join(", ", userNames));
+            Console.ReadLine();
         }
     }
 }

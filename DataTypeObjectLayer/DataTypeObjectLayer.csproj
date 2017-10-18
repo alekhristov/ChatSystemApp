@@ -40,10 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConversationDTO.cs" />
-    <Compile Include="MessageDTO.cs" />
+    <Compile Include="DTOs\ConversationDTO.cs" />
+    <Compile Include="DTOs\MessageDTO.cs" />
+    <Compile Include="MapEntityToDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{5a65d2c4-e348-4eef-9fe6-8f289e4ff95a}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
