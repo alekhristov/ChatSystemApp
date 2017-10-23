@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Alek.ChatService
 {
@@ -9,6 +10,9 @@ namespace Alek.ChatService
         public bool IsConnected{ get; set; }
 
         [DataMember]
-        public int UserID { get; set; }
+        public Guid UserGuid { get; set; }
+
+        [DataMember]
+        public string Username { get; set; }
     }
 }

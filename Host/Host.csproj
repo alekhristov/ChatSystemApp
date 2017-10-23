@@ -83,6 +83,10 @@
       <Project>{d0ba5f9c-ad0d-4807-81af-e93d31741cd9}</Project>
       <Name>ChatService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{5a65d2c4-e348-4eef-9fe6-8f289e4ff95a}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{24bcd7a2-1381-4f84-8c02-d6be11a0e463}</Project>
       <Name>Interfaces</Name>

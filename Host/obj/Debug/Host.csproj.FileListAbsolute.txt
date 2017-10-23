@@ -34,3 +34,12 @@ C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\obj\Debug\Host.csprojResol
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\obj\Debug\Host.csproj.CoreCompileInputs.cache
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\obj\Debug\Host.dll
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\obj\Debug\Host.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\ServiceModels.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\DataTypeObjectLayer.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\EntityFramework.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\ServiceModels.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\DataTypeObjectLayer.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\EntityFramework.xml
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\Alek.ChatService.dll
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\Alek.ChatService.pdb
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\Host\bin\Alek.ChatService.dll.config
