@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Alek.ChatService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ChatService" in both code and config file together.
     public class ChatService : IChatService
     {
-        private Dictionary<Guid, string> connectedUsers = new Dictionary<Guid, string>();
-        private IList<MessageDTO> currentConversation = null;
+        private static Dictionary<Guid, string> connectedUsers = new Dictionary<Guid, string>();
+        private static IList<MessageDTO> currentConversation = new List<MessageDTO>();
 
         public ConnectResponse Connect(ConnectRequest request)
         {
@@ -21,20 +22,26 @@ namespace Alek.ChatService
                 var guid = Guid.NewGuid();
 
                 connectedUsers.Add(guid, request.Username);
+
                 if (connectedUsers.Count == 2)
                 {
                     currentConversation = new List<MessageDTO>();
                 }
 
-                var user = new UserDTO()
+                var userDTO = new UserDTO()
                 {
                     Username = request.Username
                 };
 
+                var user = MapDTOToEntity.ConvertUserDTOToUser(userDTO);
+
                 using (ChatSystemAppDBContext dbContext = new ChatSystemAppDBContext())
                 {
-                    dbContext.Users.Add(user);
-                    dbContext.SaveChanges();
+                    if (!dbContext.Users.Contains(user))
+                    {
+                        dbContext.Users.Add(user);
+                        dbContext.SaveChanges();
+                    }
                 }
 
                 return new ConnectResponse()
@@ -46,7 +53,7 @@ namespace Alek.ChatService
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new ConnectResponse() { IsConnected = false };
             }
         }
 
@@ -61,6 +68,11 @@ namespace Alek.ChatService
             }
 
             //save currentConversation in DB.
+            using (ChatSystemAppDBContext dbContext = new ChatSystemAppDBContext())
+            {
+                    dbContext.SaveChanges();
+            }
+
             currentConversation = null;
 
             return new DisconnectResponse();
@@ -68,7 +80,10 @@ namespace Alek.ChatService
 
         public GetChatHistoryResponse GetChatHistory(GetChatHistoryRequest request)
         {
-            throw new NotImplementedException();
+            var chatHistory = new GetChatHistoryResponse();
+            chatHistory.Messages = currentConversation.ToList();
+
+            return chatHistory;
         }
 
         public GetOnlineUsersResponse GetOnlineUsers(GetOnlineUsersRequest request)
@@ -87,7 +102,7 @@ namespace Alek.ChatService
             }
             else if (connectedUsers.Count == 1)
             {
-                throw new Exception("No other users are connected to the server!");
+                throw new Exception("No other users are connected to the ChatSystem!");
             }
 
             return new SendMessageResponse();

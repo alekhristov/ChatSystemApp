@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Alek.ChatService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Alek.ChatService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:59046/ChatService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:59046/ChatService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ConnectRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectRequest" nillable="true" type="tns:ConnectRequest" />
+  <xs:complexType name="ConnectResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsConnected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectResponse" nillable="true" type="tns:ConnectResponse" />
+  <xs:complexType name="SendMessageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecipientGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="SenderGuid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendMessageRequest" nillable="true" type="tns:SendMessageRequest" />
+  <xs:complexType name="SendMessageResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="SendMessageResponse" nillable="true" type="tns:SendMessageResponse" />
+  <xs:complexType name="GetOnlineUsersRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GetOnlineUsersRequest" nillable="true" type="tns:GetOnlineUsersRequest" />
+  <xs:complexType name="GetOnlineUsersResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OnlineUsers" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetOnlineUsersResponse" nillable="true" type="tns:GetOnlineUsersResponse" />
+  <xs:complexType name="GetChatHistoryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="User1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetChatHistoryRequest" nillable="true" type="tns:GetChatHistoryRequest" />
+  <xs:complexType name="GetChatHistoryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfMessageDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetChatHistoryResponse" nillable="true" type="tns:GetChatHistoryResponse" />
+  <xs:complexType name="ArrayOfMessageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageDTO" nillable="true" type="tns:MessageDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessageDTO" nillable="true" type="tns:ArrayOfMessageDTO" />
+  <xs:complexType name="MessageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderUserID" type="xs:int" />
+      <xs:element minOccurs="0" name="SentTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageDTO" nillable="true" type="tns:MessageDTO" />
+  <xs:complexType name="DisconnectRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisconnectRequest" nillable="true" type="tns:DisconnectRequest" />
+  <xs:complexType name="DisconnectResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DisconnectResponse" nillable="true" type="tns:DisconnectResponse" />
+</xs:schema>

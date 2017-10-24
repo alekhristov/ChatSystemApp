@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{5A65D2C4-E348-4EEF-9FE6-8F289E4FF95A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystemApp", "ChatSystemApp\ChatSystemApp.csproj", "{3FAED780-37EB-4979-A8F4-6D468C0A0BC8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0287267C-565D-422E-A016-7C7DAADC582B} = {0287267C-565D-422E-A016-7C7DAADC582B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceModels", "ServiceModels\ServiceModels.csproj", "{2F4A02DB-5637-4E0A-88DE-6DF8D6C7A508}"
 EndProject
