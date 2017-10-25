@@ -15,4 +15,3 @@ C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\bin\Debug\Alek.
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\bin\Debug\Alek.ChatService.pdb
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\Alek.ChatService.dll
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\Alek.ChatService.pdb
-C:\Users\alek.hristov\Source\Repos\ChatSystemApp\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

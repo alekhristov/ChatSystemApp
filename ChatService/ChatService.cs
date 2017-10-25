@@ -37,11 +37,8 @@ namespace Alek.ChatService
 
                 using (ChatSystemAppDBContext dbContext = new ChatSystemAppDBContext())
                 {
-                    if (!dbContext.Users.Contains(user))
-                    {
-                        dbContext.Users.Add(user);
-                        dbContext.SaveChanges();
-                    }
+                    dbContext.Users.Add(user);
+                    dbContext.SaveChanges();
                 }
 
                 return new ConnectResponse()
@@ -67,10 +64,15 @@ namespace Alek.ChatService
                 }
             }
 
-            //save currentConversation in DB.
-            using (ChatSystemAppDBContext dbContext = new ChatSystemAppDBContext())
+            if (currentConversation != null)
             {
+                //save currentConversation in DB.
+                using (ChatSystemAppDBContext dbContext = new ChatSystemAppDBContext())
+                {
+                    var messages = currentConversation.Select(c => MapDTOToEntity.ConvertMessageDToToMessage(c));
+                    dbContext.Messages.AddRange(messages);
                     dbContext.SaveChanges();
+                }
             }
 
             currentConversation = null;
@@ -81,7 +83,7 @@ namespace Alek.ChatService
         public GetChatHistoryResponse GetChatHistory(GetChatHistoryRequest request)
         {
             var chatHistory = new GetChatHistoryResponse();
-            chatHistory.Messages = currentConversation.ToList();
+            chatHistory.Messages = currentConversation.Where(m => m.SentTime < request.CurrentTime).ToList();
 
             return chatHistory;
         }
@@ -95,10 +97,12 @@ namespace Alek.ChatService
         {
             if (connectedUsers.Count == 2)
             {
-                var message = new MessageDTO();
-                message.Message = request.Message;
+                var messageDTO = new MessageDTO();
+                messageDTO.Message = request.Message;
+                messageDTO.SentTime = DateTime.Now;
 
-                currentConversation.Add(message);
+                currentConversation.Add(messageDTO);
+
             }
             else if (connectedUsers.Count == 1)
             {

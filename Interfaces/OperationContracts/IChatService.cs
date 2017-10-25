@@ -25,5 +25,4 @@ namespace Alek.ChatService
         [OperationContract]
         DisconnectResponse Disconnect(DisconnectRequest request);
     }
-
 }

@@ -40,6 +40,7 @@
   <xs:element name="GetOnlineUsersResponse" nillable="true" type="tns:GetOnlineUsersResponse" />
   <xs:complexType name="GetChatHistoryRequest">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="User1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="User2" nillable="true" type="xs:string" />
     </xs:sequence>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Alek.ChatService.AlekChatServiceReference {
+namespace Alek.ChatService.ChatServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -325,6 +325,9 @@ namespace Alek.ChatService.AlekChatServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CurrentTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string User1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -337,6 +340,19 @@ namespace Alek.ChatService.AlekChatServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CurrentTime {
+            get {
+                return this.CurrentTimeField;
+            }
+            set {
+                if ((this.CurrentTimeField.Equals(value) != true)) {
+                    this.CurrentTimeField = value;
+                    this.RaisePropertyChanged("CurrentTime");
+                }
             }
         }
         
@@ -386,7 +402,7 @@ namespace Alek.ChatService.AlekChatServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Alek.ChatService.AlekChatServiceReference.MessageDTO[] MessagesField;
+        private Alek.ChatService.ChatServiceReference.MessageDTO[] MessagesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -399,7 +415,7 @@ namespace Alek.ChatService.AlekChatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Alek.ChatService.AlekChatServiceReference.MessageDTO[] Messages {
+        public Alek.ChatService.ChatServiceReference.MessageDTO[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -589,47 +605,47 @@ namespace Alek.ChatService.AlekChatServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AlekChatServiceReference.IChatService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ChatServiceReference.IChatService")]
     public interface IChatService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/Connect", ReplyAction="http://tempuri.org/IChatService/ConnectResponse")]
-        Alek.ChatService.AlekChatServiceReference.ConnectResponse Connect(Alek.ChatService.AlekChatServiceReference.ConnectRequest request);
+        Alek.ChatService.ChatServiceReference.ConnectResponse Connect(Alek.ChatService.ChatServiceReference.ConnectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/Connect", ReplyAction="http://tempuri.org/IChatService/ConnectResponse")]
-        System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.ConnectResponse> ConnectAsync(Alek.ChatService.AlekChatServiceReference.ConnectRequest request);
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.ConnectResponse> ConnectAsync(Alek.ChatService.ChatServiceReference.ConnectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        Alek.ChatService.AlekChatServiceReference.SendMessageResponse SendMessage(Alek.ChatService.AlekChatServiceReference.SendMessageRequest request);
+        Alek.ChatService.ChatServiceReference.SendMessageResponse SendMessage(Alek.ChatService.ChatServiceReference.SendMessageRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.SendMessageResponse> SendMessageAsync(Alek.ChatService.AlekChatServiceReference.SendMessageRequest request);
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.SendMessageResponse> SendMessageAsync(Alek.ChatService.ChatServiceReference.SendMessageRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetOnlineUsers", ReplyAction="http://tempuri.org/IChatService/GetOnlineUsersResponse")]
-        Alek.ChatService.AlekChatServiceReference.GetOnlineUsersResponse GetOnlineUsers(Alek.ChatService.AlekChatServiceReference.GetOnlineUsersRequest request);
+        Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse GetOnlineUsers(Alek.ChatService.ChatServiceReference.GetOnlineUsersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetOnlineUsers", ReplyAction="http://tempuri.org/IChatService/GetOnlineUsersResponse")]
-        System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.GetOnlineUsersResponse> GetOnlineUsersAsync(Alek.ChatService.AlekChatServiceReference.GetOnlineUsersRequest request);
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse> GetOnlineUsersAsync(Alek.ChatService.ChatServiceReference.GetOnlineUsersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetChatHistory", ReplyAction="http://tempuri.org/IChatService/GetChatHistoryResponse")]
-        Alek.ChatService.AlekChatServiceReference.GetChatHistoryResponse GetChatHistory(Alek.ChatService.AlekChatServiceReference.GetChatHistoryRequest request);
+        Alek.ChatService.ChatServiceReference.GetChatHistoryResponse GetChatHistory(Alek.ChatService.ChatServiceReference.GetChatHistoryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetChatHistory", ReplyAction="http://tempuri.org/IChatService/GetChatHistoryResponse")]
-        System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.GetChatHistoryResponse> GetChatHistoryAsync(Alek.ChatService.AlekChatServiceReference.GetChatHistoryRequest request);
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetChatHistoryResponse> GetChatHistoryAsync(Alek.ChatService.ChatServiceReference.GetChatHistoryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/Disconnect", ReplyAction="http://tempuri.org/IChatService/DisconnectResponse")]
-        Alek.ChatService.AlekChatServiceReference.DisconnectResponse Disconnect(Alek.ChatService.AlekChatServiceReference.DisconnectRequest request);
+        Alek.ChatService.ChatServiceReference.DisconnectResponse Disconnect(Alek.ChatService.ChatServiceReference.DisconnectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/Disconnect", ReplyAction="http://tempuri.org/IChatService/DisconnectResponse")]
-        System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.AlekChatServiceReference.DisconnectRequest request);
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.ChatServiceReference.DisconnectRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceChannel : Alek.ChatService.AlekChatServiceReference.IChatService, System.ServiceModel.IClientChannel {
+    public interface IChatServiceChannel : Alek.ChatService.ChatServiceReference.IChatService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ChatServiceClient : System.ServiceModel.ClientBase<Alek.ChatService.AlekChatServiceReference.IChatService>, Alek.ChatService.AlekChatServiceReference.IChatService {
+    public partial class ChatServiceClient : System.ServiceModel.ClientBase<Alek.ChatService.ChatServiceReference.IChatService>, Alek.ChatService.ChatServiceReference.IChatService {
         
         public ChatServiceClient() {
         }
@@ -650,43 +666,43 @@ namespace Alek.ChatService.AlekChatServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public Alek.ChatService.AlekChatServiceReference.ConnectResponse Connect(Alek.ChatService.AlekChatServiceReference.ConnectRequest request) {
+        public Alek.ChatService.ChatServiceReference.ConnectResponse Connect(Alek.ChatService.ChatServiceReference.ConnectRequest request) {
             return base.Channel.Connect(request);
         }
         
-        public System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.ConnectResponse> ConnectAsync(Alek.ChatService.AlekChatServiceReference.ConnectRequest request) {
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.ConnectResponse> ConnectAsync(Alek.ChatService.ChatServiceReference.ConnectRequest request) {
             return base.Channel.ConnectAsync(request);
         }
         
-        public Alek.ChatService.AlekChatServiceReference.SendMessageResponse SendMessage(Alek.ChatService.AlekChatServiceReference.SendMessageRequest request) {
+        public Alek.ChatService.ChatServiceReference.SendMessageResponse SendMessage(Alek.ChatService.ChatServiceReference.SendMessageRequest request) {
             return base.Channel.SendMessage(request);
         }
         
-        public System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.SendMessageResponse> SendMessageAsync(Alek.ChatService.AlekChatServiceReference.SendMessageRequest request) {
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.SendMessageResponse> SendMessageAsync(Alek.ChatService.ChatServiceReference.SendMessageRequest request) {
             return base.Channel.SendMessageAsync(request);
         }
         
-        public Alek.ChatService.AlekChatServiceReference.GetOnlineUsersResponse GetOnlineUsers(Alek.ChatService.AlekChatServiceReference.GetOnlineUsersRequest request) {
+        public Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse GetOnlineUsers(Alek.ChatService.ChatServiceReference.GetOnlineUsersRequest request) {
             return base.Channel.GetOnlineUsers(request);
         }
         
-        public System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.GetOnlineUsersResponse> GetOnlineUsersAsync(Alek.ChatService.AlekChatServiceReference.GetOnlineUsersRequest request) {
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse> GetOnlineUsersAsync(Alek.ChatService.ChatServiceReference.GetOnlineUsersRequest request) {
             return base.Channel.GetOnlineUsersAsync(request);
         }
         
-        public Alek.ChatService.AlekChatServiceReference.GetChatHistoryResponse GetChatHistory(Alek.ChatService.AlekChatServiceReference.GetChatHistoryRequest request) {
+        public Alek.ChatService.ChatServiceReference.GetChatHistoryResponse GetChatHistory(Alek.ChatService.ChatServiceReference.GetChatHistoryRequest request) {
             return base.Channel.GetChatHistory(request);
         }
         
-        public System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.GetChatHistoryResponse> GetChatHistoryAsync(Alek.ChatService.AlekChatServiceReference.GetChatHistoryRequest request) {
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetChatHistoryResponse> GetChatHistoryAsync(Alek.ChatService.ChatServiceReference.GetChatHistoryRequest request) {
             return base.Channel.GetChatHistoryAsync(request);
         }
         
-        public Alek.ChatService.AlekChatServiceReference.DisconnectResponse Disconnect(Alek.ChatService.AlekChatServiceReference.DisconnectRequest request) {
+        public Alek.ChatService.ChatServiceReference.DisconnectResponse Disconnect(Alek.ChatService.ChatServiceReference.DisconnectRequest request) {
             return base.Channel.Disconnect(request);
         }
         
-        public System.Threading.Tasks.Task<Alek.ChatService.AlekChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.AlekChatServiceReference.DisconnectRequest request) {
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.ChatServiceReference.DisconnectRequest request) {
             return base.Channel.DisconnectAsync(request);
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Alek.ChatService
 {
@@ -10,5 +11,8 @@ namespace Alek.ChatService
 
         [DataMember]
         public string User2 { get; set; }
+
+        [DataMember]
+        public DateTime CurrentTime { get; set; }
     }
 }
