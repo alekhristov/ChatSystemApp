@@ -38,6 +38,12 @@
   <wsdl:message name="IChatService_Disconnect_OutputMessage">
     <wsdl:part name="parameters" element="tns:DisconnectResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatService_GetCurrentConversationHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentConversationHistory" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_GetCurrentConversationHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentConversationHistoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IChatService">
     <wsdl:operation name="Connect">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/Connect" message="tns:IChatService_Connect_InputMessage" />
@@ -58,6 +64,10 @@
     <wsdl:operation name="Disconnect">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/Disconnect" message="tns:IChatService_Disconnect_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatService/DisconnectResponse" message="tns:IChatService_Disconnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentConversationHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetCurrentConversationHistory" message="tns:IChatService_GetCurrentConversationHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/GetCurrentConversationHistoryResponse" message="tns:IChatService_GetCurrentConversationHistory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IChatService" type="tns:IChatService">
@@ -100,6 +110,15 @@
     </wsdl:operation>
     <wsdl:operation name="Disconnect">
       <soap:operation soapAction="http://tempuri.org/IChatService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentConversationHistory">
+      <soap:operation soapAction="http://tempuri.org/IChatService/GetCurrentConversationHistory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

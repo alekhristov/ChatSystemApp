@@ -24,7 +24,6 @@ namespace Alek.ChatService
             return new Message()
             {
                 Message1 = messageDTO.Message,
-                SenderUserID = messageDTO.SenderUserID,
                 SentTime = messageDTO.SentTime
             };
         }

@@ -63,21 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ChatServiceReference\Alek.ChatService.ChatServiceReference.ConnectResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ChatServiceReference\Alek.ChatService.ChatServiceReference.DisconnectResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ChatServiceReference\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ChatServiceReference\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ChatServiceReference\Alek.ChatService.ChatServiceReference.SendMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ChatServiceReference\ChatService.wsdl" />
     <None Include="Connected Services\ChatServiceReference\ChatService.xsd">
       <SubType>Designer</SubType>
@@ -102,6 +87,36 @@
     <None Include="Properties\DataSources\Alek.ChatService.AlekChatServiceReference.GetOnlineUsersResponse1.datasource" />
     <None Include="Properties\DataSources\Alek.ChatService.AlekChatServiceReference.SendMessageResponse.datasource" />
     <None Include="Properties\DataSources\Alek.ChatService.AlekChatServiceReference.SendMessageResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.ConnectResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.ConnectResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.ConnectResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.ConnectResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.ConnectResponse4.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.DisconnectResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.DisconnectResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.DisconnectResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.DisconnectResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.DisconnectResponse4.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetChatHistoryResponse4.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse4.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.GetOnlineUsersResponse4.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.SendMessageResponse.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.SendMessageResponse1.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.SendMessageResponse2.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.SendMessageResponse3.datasource" />
+    <None Include="Properties\DataSources\Alek.ChatService.ChatServiceReference.SendMessageResponse4.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

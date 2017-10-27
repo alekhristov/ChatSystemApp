@@ -61,6 +61,7 @@ namespace Alek.ChatService
                 if (user.Key == request.UserGuid)
                 {
                     connectedUsers.Remove(user.Key);
+                    break;
                 }
             }
 
@@ -88,6 +89,14 @@ namespace Alek.ChatService
             return chatHistory;
         }
 
+        public GetCurrentConversationResponse GetCurrentConversationHistory(GetCurrentConversationRequest request)
+        {
+            var currentConversationHistory = new GetCurrentConversationResponse();
+            currentConversationHistory.Messages = currentConversation.Where(m => m.SentTime < request.CurrentTime).ToList();
+
+            return currentConversationHistory;
+        }
+
         public GetOnlineUsersResponse GetOnlineUsers(GetOnlineUsersRequest request)
         {
             throw new NotImplementedException();
@@ -99,10 +108,11 @@ namespace Alek.ChatService
             {
                 var messageDTO = new MessageDTO();
                 messageDTO.Message = request.Message;
-                messageDTO.SentTime = DateTime.Now;
+                messageDTO.SentTime = DateTime.UtcNow;
+                messageDTO.Sender = request.SenderName;
+                messageDTO.Guid = Guid.NewGuid(); 
 
                 currentConversation.Add(messageDTO);
-
             }
             else if (connectedUsers.Count == 1)
             {

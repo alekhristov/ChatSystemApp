@@ -24,5 +24,8 @@ namespace Alek.ChatService
 
         [OperationContract]
         DisconnectResponse Disconnect(DisconnectRequest request);
+
+        [OperationContract]
+        GetCurrentConversationResponse GetCurrentConversationHistory(GetCurrentConversationRequest request);
     }
 }

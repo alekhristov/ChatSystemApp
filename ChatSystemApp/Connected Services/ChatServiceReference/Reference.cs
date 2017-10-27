@@ -153,6 +153,9 @@ namespace Alek.ChatService.ChatServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid SenderGuidField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenderNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -198,6 +201,19 @@ namespace Alek.ChatService.ChatServiceReference {
                 if ((this.SenderGuidField.Equals(value) != true)) {
                     this.SenderGuidField = value;
                     this.RaisePropertyChanged("SenderGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderName {
+            get {
+                return this.SenderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderNameField, value) != true)) {
+                    this.SenderNameField = value;
+                    this.RaisePropertyChanged("SenderName");
                 }
             }
         }
@@ -447,10 +463,13 @@ namespace Alek.ChatService.ChatServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid GuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SenderUserIDField;
+        private string SenderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime SentTimeField;
@@ -462,6 +481,19 @@ namespace Alek.ChatService.ChatServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Guid {
+            get {
+                return this.GuidField;
+            }
+            set {
+                if ((this.GuidField.Equals(value) != true)) {
+                    this.GuidField = value;
+                    this.RaisePropertyChanged("Guid");
+                }
             }
         }
         
@@ -479,14 +511,14 @@ namespace Alek.ChatService.ChatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SenderUserID {
+        public string Sender {
             get {
-                return this.SenderUserIDField;
+                return this.SenderField;
             }
             set {
-                if ((this.SenderUserIDField.Equals(value) != true)) {
-                    this.SenderUserIDField = value;
-                    this.RaisePropertyChanged("SenderUserID");
+                if ((object.ReferenceEquals(this.SenderField, value) != true)) {
+                    this.SenderField = value;
+                    this.RaisePropertyChanged("Sender");
                 }
             }
         }
@@ -604,6 +636,128 @@ namespace Alek.ChatService.ChatServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetCurrentConversationRequest", Namespace="http://schemas.datacontract.org/2004/07/Alek.ChatService")]
+    [System.SerializableAttribute()]
+    public partial class GetCurrentConversationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CurrentTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecipientNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenderNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CurrentTime {
+            get {
+                return this.CurrentTimeField;
+            }
+            set {
+                if ((this.CurrentTimeField.Equals(value) != true)) {
+                    this.CurrentTimeField = value;
+                    this.RaisePropertyChanged("CurrentTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecipientName {
+            get {
+                return this.RecipientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecipientNameField, value) != true)) {
+                    this.RecipientNameField = value;
+                    this.RaisePropertyChanged("RecipientName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderName {
+            get {
+                return this.SenderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderNameField, value) != true)) {
+                    this.SenderNameField = value;
+                    this.RaisePropertyChanged("SenderName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetCurrentConversationResponse", Namespace="http://schemas.datacontract.org/2004/07/Alek.ChatService")]
+    [System.SerializableAttribute()]
+    public partial class GetCurrentConversationResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Alek.ChatService.ChatServiceReference.MessageDTO[] MessagesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Alek.ChatService.ChatServiceReference.MessageDTO[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ChatServiceReference.IChatService")]
     public interface IChatService {
@@ -637,6 +791,12 @@ namespace Alek.ChatService.ChatServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/Disconnect", ReplyAction="http://tempuri.org/IChatService/DisconnectResponse")]
         System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.ChatServiceReference.DisconnectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetCurrentConversationHistory", ReplyAction="http://tempuri.org/IChatService/GetCurrentConversationHistoryResponse")]
+        Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse GetCurrentConversationHistory(Alek.ChatService.ChatServiceReference.GetCurrentConversationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetCurrentConversationHistory", ReplyAction="http://tempuri.org/IChatService/GetCurrentConversationHistoryResponse")]
+        System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse> GetCurrentConversationHistoryAsync(Alek.ChatService.ChatServiceReference.GetCurrentConversationRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -704,6 +864,14 @@ namespace Alek.ChatService.ChatServiceReference {
         
         public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.DisconnectResponse> DisconnectAsync(Alek.ChatService.ChatServiceReference.DisconnectRequest request) {
             return base.Channel.DisconnectAsync(request);
+        }
+        
+        public Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse GetCurrentConversationHistory(Alek.ChatService.ChatServiceReference.GetCurrentConversationRequest request) {
+            return base.Channel.GetCurrentConversationHistory(request);
+        }
+        
+        public System.Threading.Tasks.Task<Alek.ChatService.ChatServiceReference.GetCurrentConversationResponse> GetCurrentConversationHistoryAsync(Alek.ChatService.ChatServiceReference.GetCurrentConversationRequest request) {
+            return base.Channel.GetCurrentConversationHistoryAsync(request);
         }
     }
 }

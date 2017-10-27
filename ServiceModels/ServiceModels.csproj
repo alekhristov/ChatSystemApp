@@ -47,6 +47,8 @@
     <Compile Include="DisconnectResponse.cs" />
     <Compile Include="GetChatHistoryRequest.cs" />
     <Compile Include="GetChatHistoryResponse.cs" />
+    <Compile Include="GetCurrentConversationRequest.cs" />
+    <Compile Include="GetCurrentConversationResponse.cs" />
     <Compile Include="GetOnlineUsersRequest.cs" />
     <Compile Include="GetOnlineUsersResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

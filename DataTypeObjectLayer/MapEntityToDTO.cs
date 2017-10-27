@@ -18,7 +18,6 @@
             return new MessageDTO()
             {
                 Message = message.Message1,
-                SenderUserID = message.SenderUserID,
                 SentTime = message.SentTime
             };
         }
