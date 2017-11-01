@@ -83,6 +83,9 @@
     <Compile Include="User.cs">
       <DependentUpon>ChatSystemDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Users_Conversations.cs">
+      <DependentUpon>ChatSystemDataModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,19 +99,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ChatSystemDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChatSystemDataModel.Context.cs</LastGenOutput>
       <DependentUpon>ChatSystemDataModel.edmx</DependentUpon>
+      <LastGenOutput>ChatSystemDataModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ChatSystemDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ChatSystemDataModel.edmx</DependentUpon>
       <LastGenOutput>ChatSystemDataModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

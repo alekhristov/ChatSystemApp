@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ChatSystemAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Alek.ChatService.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Conversations">
     <Key>
       <PropertyRef Name="ConversationID" />
     </Key>
-    <Property Name="ConversationID" Type="int" Nullable="false" />
-    <Property Name="User1ID" Type="int" Nullable="false" />
-    <Property Name="User2ID" Type="int" Nullable="false" />
+    <Property Name="ConversationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StartTime" Type="datetime" Nullable="false" />
     <Property Name="EndTime" Type="datetime" Nullable="false" />
   </EntityType>
@@ -14,7 +12,7 @@
     <Key>
       <PropertyRef Name="MessageID" />
     </Key>
-    <Property Name="MessageID" Type="int" Nullable="false" />
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Message" Type="text" Nullable="false" />
     <Property Name="SenderUserID" Type="int" Nullable="false" />
     <Property Name="SentTime" Type="datetime" Nullable="false" />
@@ -39,9 +37,9 @@
   </EntityType>
   <EntityType Name="Users_Conversations">
     <Key>
-      <PropertyRef Name="UserID" />
-      <PropertyRef Name="ConversationID" />
+      <PropertyRef Name="UsersConversationsID" />
     </Key>
+    <Property Name="UsersConversationsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="ConversationID" Type="int" Nullable="false" />
   </EntityType>
@@ -54,6 +52,18 @@
       </Principal>
       <Dependent Role="Messages">
         <PropertyRef Name="ConversationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="SenderUserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -112,7 +122,7 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <EntityContainer Name="ChatSystemAppModelStoreContainer">
+  <EntityContainer Name="AlekChatServiceStoreContainer">
     <EntitySet Name="Conversations" EntityType="Self.Conversations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -120,6 +130,10 @@
     <EntitySet Name="Users_Conversations" EntityType="Self.Users_Conversations" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Messages_Conversations" Association="Self.FK_Messages_Conversations">
       <End Role="Conversations" EntitySet="Conversations" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Messages" EntitySet="Messages" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Conversations_Conversations" Association="Self.FK_Users_Conversations_Conversations">

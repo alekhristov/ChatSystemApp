@@ -71,6 +71,9 @@ namespace Alek.ChatService.ChatServiceReference {
         private bool IsConnectedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SenderUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid UserGuidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -95,6 +98,19 @@ namespace Alek.ChatService.ChatServiceReference {
                 if ((this.IsConnectedField.Equals(value) != true)) {
                     this.IsConnectedField = value;
                     this.RaisePropertyChanged("IsConnected");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SenderUserID {
+            get {
+                return this.SenderUserIDField;
+            }
+            set {
+                if ((this.SenderUserIDField.Equals(value) != true)) {
+                    this.SenderUserIDField = value;
+                    this.RaisePropertyChanged("SenderUserID");
                 }
             }
         }
@@ -156,6 +172,9 @@ namespace Alek.ChatService.ChatServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SenderNameField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SenderUserIDField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -214,6 +233,19 @@ namespace Alek.ChatService.ChatServiceReference {
                 if ((object.ReferenceEquals(this.SenderNameField, value) != true)) {
                     this.SenderNameField = value;
                     this.RaisePropertyChanged("SenderName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SenderUserID {
+            get {
+                return this.SenderUserIDField;
+            }
+            set {
+                if ((this.SenderUserIDField.Equals(value) != true)) {
+                    this.SenderUserIDField = value;
+                    this.RaisePropertyChanged("SenderUserID");
                 }
             }
         }
@@ -472,6 +504,9 @@ namespace Alek.ChatService.ChatServiceReference {
         private string SenderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SenderUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime SentTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -519,6 +554,19 @@ namespace Alek.ChatService.ChatServiceReference {
                 if ((object.ReferenceEquals(this.SenderField, value) != true)) {
                     this.SenderField = value;
                     this.RaisePropertyChanged("Sender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SenderUserID {
+            get {
+                return this.SenderUserIDField;
+            }
+            set {
+                if ((this.SenderUserIDField.Equals(value) != true)) {
+                    this.SenderUserIDField = value;
+                    this.RaisePropertyChanged("SenderUserID");
                 }
             }
         }

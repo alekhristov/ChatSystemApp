@@ -17,13 +17,16 @@ namespace Alek.ChatService
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Conversations = new HashSet<Conversation>();
+            this.Messages = new HashSet<Message>();
+            this.Users_Conversations = new HashSet<Users_Conversations>();
         }
     
         public int UserID { get; set; }
         public string Username { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Conversation> Conversations { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Users_Conversations> Users_Conversations { get; set; }
     }
 }

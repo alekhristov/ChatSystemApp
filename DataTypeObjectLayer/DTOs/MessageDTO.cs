@@ -8,6 +8,8 @@ namespace Alek.ChatService
 
         public string Sender { get; set; }
 
+        public int SenderUserID { get; set; }
+
         public DateTime SentTime { get; set; }
 
         public Guid Guid { get; set; }

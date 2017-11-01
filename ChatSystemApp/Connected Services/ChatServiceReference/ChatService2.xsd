@@ -11,6 +11,7 @@
   <xs:complexType name="ConnectResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="IsConnected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SenderUserID" type="xs:int" />
       <xs:element minOccurs="0" name="UserGuid" type="ser:guid" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -22,6 +23,7 @@
       <xs:element minOccurs="0" name="RecipientGuid" type="ser:guid" />
       <xs:element minOccurs="0" name="SenderGuid" type="ser:guid" />
       <xs:element minOccurs="0" name="SenderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderUserID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SendMessageRequest" nillable="true" type="tns:SendMessageRequest" />
@@ -64,6 +66,7 @@
       <xs:element minOccurs="0" name="Guid" type="ser:guid" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderUserID" type="xs:int" />
       <xs:element minOccurs="0" name="SentTime" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>

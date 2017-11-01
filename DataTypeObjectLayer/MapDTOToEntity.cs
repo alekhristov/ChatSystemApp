@@ -12,8 +12,6 @@ namespace Alek.ChatService
         {
             return new Conversation()
             {
-                User1ID = conversationDTO.User1ID,
-                User2ID = conversationDTO.User2ID,
                 StartTime = conversationDTO.StartTime,
                 EndTime = conversationDTO.EndTime
             };
@@ -23,6 +21,7 @@ namespace Alek.ChatService
         {
             return new Message()
             {
+                SenderUserID = messageDTO.SenderUserID,
                 Message1 = messageDTO.Message,
                 SentTime = messageDTO.SentTime
             };

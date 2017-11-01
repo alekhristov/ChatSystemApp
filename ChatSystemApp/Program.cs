@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 using Alek.ChatService.ChatServiceReference;
+using System.Threading;
 
 namespace Alek.ChatService
 {
@@ -20,8 +19,6 @@ namespace Alek.ChatService
         private static ChatServiceClient client = new ChatServiceClient();
         private static string UserName;
         private static IList<string> messages;
-        private static IList<Guid> messagesGuid;
-
 
         static void Main(string[] args)
         {
@@ -35,10 +32,9 @@ namespace Alek.ChatService
 
             var response = client.Connect(request);
 
-
             if (response.IsConnected)
             {
-                Console.WriteLine("You are connected to Alek's ChatSystem!\r\nPress 1 to Send message:\r\nPress 2 to Get chat history:\r\nPress 3 to Disconnect:");
+                Console.WriteLine("You are now connected to Alek's ChatSystem!\r\nPress 1 to Send message:\r\nPress 2 to Get chat history:\r\nPress 3 to Disconnect:");
                 Task.Factory.StartNew(async () =>
                 {
                     while (true)
@@ -65,6 +61,7 @@ namespace Alek.ChatService
                                 messageRequest.Message = Console.ReadLine();
                                 messageRequest.SenderGuid = response.UserGuid;
                                 messageRequest.SenderName = UserName;
+                                messageRequest.SenderUserID = response.SenderUserID;
 
                                 if (messages == null)
                                 {
@@ -76,14 +73,23 @@ namespace Alek.ChatService
                                 break;
 
                             case CommonCommands.getChatHistory:
+                                var chatHistoryRequest = new GetChatHistoryRequest();
+                                chatHistoryRequest.CurrentTime = DateTime.UtcNow;
+                               var history = client.GetChatHistory(chatHistoryRequest).Messages;
+                                foreach (var message in history.Where(m => m.SentTime < DateTime.UtcNow))
+                                {
+                                    Console.WriteLine($"{message.Sender}: {message.Message}");
+                                }
                                 break;
 
                             case CommonCommands.disconnect:
 
                                 var disconnectRequest = new DisconnectRequest();
+                                disconnectRequest.UserGuid = response.UserGuid;
                                 client.Disconnect(disconnectRequest);
                                 client = null;
                                 Console.WriteLine("You have been disconnected.");
+                                Thread.Sleep(2000);
                                 return;
                         }
                     }
@@ -103,38 +109,28 @@ namespace Alek.ChatService
                 if (messages == null)
                 {
                     messages = new List<string>();
-                    messagesGuid = new List<Guid>();
                 }
 
-                if (messages.Count != responseCurrentConversation.Messages.Count())
+                var totalMessages = responseCurrentConversation.Messages.Count();
+                var numberOfOldMessages = messages.Count();
+                var numberOfNewMessages = totalMessages - numberOfOldMessages;
+                var newMessages = responseCurrentConversation.Messages.Skip(numberOfOldMessages).Take(numberOfNewMessages);
+
+                if (newMessages != null && newMessages.Any())
                 {
-                    //var firstNewMessage = response.Messages.Count() - (response.Messages.Count() - messages.Count);
-
-                    //for (int i = firstNewMessage; i < response.Messages.Count(); i++)
-                    //{
-                    //    messages.Add($"{UserName}: {response.Messages[i]}");
-                    //    Console.WriteLine(messages[i]);
-                    //}
-
-                    foreach (var message in responseCurrentConversation.Messages.OrderBy(m => m.SentTime))
+                    foreach (var message in newMessages)
                     {
-                        if (!messagesGuid.Contains(message.Guid))
+                        messages.Add(message.Message);
+
+                        if (message.Sender != UserName && message.Message != string.Empty)
                         {
-                            messagesGuid.Add(message.Guid);
-                            messages.Add($"{message.Message}");
-                            Console.WriteLine();
                             Console.WriteLine($"{message.Sender}: {message.Message}");
                         }
                     }
-
-                    //var lastMessage = responseCurrentConversation.Messages.Last();
-                    //messages.Add(lastMessage.Message);
-
-                    //Console.WriteLine($"{lastMessage.Sender}: {lastMessage.Message}");
                 }
             }
-
         }
+
         ~Program()
         {
             client.Disconnect(new DisconnectRequest());

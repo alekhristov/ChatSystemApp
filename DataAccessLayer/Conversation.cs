@@ -18,18 +18,16 @@ namespace Alek.ChatService
         public Conversation()
         {
             this.Messages = new HashSet<Message>();
-            this.Users = new HashSet<User>();
+            this.Users_Conversations = new HashSet<Users_Conversations>();
         }
     
         public int ConversationID { get; set; }
-        public int User1ID { get; set; }
-        public int User2ID { get; set; }
         public System.DateTime StartTime { get; set; }
         public System.DateTime EndTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Messages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Users_Conversations> Users_Conversations { get; set; }
     }
 }

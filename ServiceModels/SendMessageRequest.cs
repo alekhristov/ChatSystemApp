@@ -13,6 +13,9 @@ namespace Alek.ChatService
         public string SenderName { get; set; }
 
         [DataMember]
+        public int SenderUserID { get; set; }
+
+        [DataMember]
         public string Message { get; set; }
 
         [DataMember]

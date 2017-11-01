@@ -6,8 +6,6 @@
         {
             return new ConversationDTO()
             {
-                User1ID = conversation.User1ID,
-                User2ID = conversation.User2ID,
                 StartTime = conversation.StartTime,
                 EndTime = conversation.EndTime
             };
@@ -17,6 +15,7 @@
         {
             return new MessageDTO()
             {
+                SenderUserID = message.SenderUserID,
                 Message = message.Message1,
                 SentTime = message.SentTime
             };
