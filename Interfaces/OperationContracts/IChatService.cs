@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 
 namespace Alek.ChatService
 {
@@ -27,5 +22,8 @@ namespace Alek.ChatService
 
         [OperationContract]
         GetCurrentConversationResponse GetCurrentConversationHistory(GetCurrentConversationRequest request);
+
+        [OperationContract]
+        GetConversationHistoryResponse GetConversationHistory(GetConversationHistoryRequest request);
     }
 }

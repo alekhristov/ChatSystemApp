@@ -13,6 +13,9 @@ namespace Alek.ChatService
         public string User2 { get; set; }
 
         [DataMember]
+        public Guid UserGuid { get; set; }
+
+        [DataMember]
         public DateTime CurrentTime { get; set; }
     }
 }

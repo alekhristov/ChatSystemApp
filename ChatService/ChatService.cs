@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 
 namespace Alek.ChatService
 {
@@ -10,7 +11,7 @@ namespace Alek.ChatService
         private static Dictionary<Guid, string> connectedUsers = new Dictionary<Guid, string>();
         private static IList<MessageDTO> currentConversation = new List<MessageDTO>();
         private static ConversationDTO conversationDTO = new ConversationDTO();
-
+        
         public ConnectResponse Connect(ConnectRequest request)
         {
             try
@@ -21,7 +22,6 @@ namespace Alek.ChatService
                 }
 
                 var guid = Guid.NewGuid();
-
                 connectedUsers.Add(guid, request.Username);
 
                 if (connectedUsers.Count == 2)
@@ -57,7 +57,7 @@ namespace Alek.ChatService
                 return new ConnectResponse() { IsConnected = false };
             }
         }
-
+        
         public DisconnectResponse Disconnect(DisconnectRequest request)
         {
             foreach (var user in connectedUsers)
@@ -77,8 +77,12 @@ namespace Alek.ChatService
                 {
                     var conversation = MapDTOToEntity.ConvertConversationDTOToConversation(conversationDTO);
                     dbContext.Conversations.Add(conversation);
+
                     var messages = currentConversation.Select(c => MapDTOToEntity.ConvertMessageDToToMessage(c));
                     dbContext.Messages.AddRange(messages);
+
+                    //Add save in Users_Conversation
+
                     dbContext.SaveChanges();
                 }
             }
@@ -92,11 +96,37 @@ namespace Alek.ChatService
         {
             var chatHistoryResponse = new GetChatHistoryResponse();
 
-            if (connectedUsers.Count() == 2)
+            using (var dbContext = new ChatSystemAppDBContext())
             {
-                chatHistoryResponse.Messages = currentConversation.ToList();
+                var userNameIds = dbContext.Users.
+                    Where(u => u.Username == request.User1).
+                    Select(u => u.UserID).ToList();
+
+                var usersConversationIds = dbContext.Users_Conversations.
+                    Where(uc => userNameIds.Contains(uc.UserID)).
+                    Select(uc => uc.ConversationID).ToList();
+
+                var dataLayerMessages = dbContext.Messages.
+                    Where(m => usersConversationIds.Contains(m.ConversationID)).
+                    Select(m => MapEntityToDTO.ConvertMessageToMessageDTO(m)).
+                    OrderBy(m => m.SentTime).ToList();
+
+                chatHistoryResponse.Messages = dataLayerMessages;
             }
+                
             return chatHistoryResponse;
+        }
+
+        public GetConversationHistoryResponse GetConversationHistory(GetConversationHistoryRequest request)
+        {
+            var getConversationHistoryResponse = new GetConversationHistoryResponse();
+
+            //1. Get usersIds by userName
+            //2. Get conversationIds from User_Conversations by userIds from 1.
+            //3. Get Conversations by conversationIds from 2.
+            //4. Create list of UserConversationHistoryModel
+
+            return getConversationHistoryResponse;
         }
 
         public GetCurrentConversationResponse GetCurrentConversationHistory(GetCurrentConversationRequest request)
@@ -135,11 +165,6 @@ namespace Alek.ChatService
             }
 
             return new SendMessageResponse();
-        }
-
-        ~ChatService()
-        {
-
         }
     }
 }
