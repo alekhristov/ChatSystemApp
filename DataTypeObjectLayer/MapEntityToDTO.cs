@@ -29,5 +29,14 @@
                 Username = user.Username
             };
         }
+
+        public static Users_ConversationsDTO ConvertUsersConversationsToUsersConversationsDTO(Users_Conversations usersConversations)
+        {
+            return new Users_ConversationsDTO()
+            {
+                UserID = usersConversations.UserID,
+                ConversationID = usersConversations.ConversationID
+            };
+        }
     }
 }

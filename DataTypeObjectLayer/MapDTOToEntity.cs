@@ -35,5 +35,14 @@ namespace Alek.ChatService
                 Username = userDTO.Username
             };
         }
+
+        public static Users_Conversations ConvertUserConversationsDTOToUsersConversations(Users_ConversationsDTO usersConversationsDTO)
+        {
+            return new Users_Conversations()
+            {
+                 UserID = usersConversationsDTO.UserID,
+                 ConversationID = usersConversationsDTO.ConversationID
+            };
+        }
     }
 }

@@ -75,7 +75,9 @@ namespace Alek.ChatService
                             case CommonCommands.getChatHistory:
                                 var chatHistoryRequest = new GetChatHistoryRequest();
                                 chatHistoryRequest.CurrentTime = DateTime.UtcNow;
+                                chatHistoryRequest.User1 = UserName;
                                var history = client.GetChatHistory(chatHistoryRequest).Messages;
+
                                 foreach (var message in history.Where(m => m.SentTime < DateTime.UtcNow))
                                 {
                                     Console.WriteLine($"{message.Sender}: {message.Message}");

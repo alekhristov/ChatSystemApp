@@ -7,8 +7,6 @@ c:\Users\alek.hristov\Source\Repos\DALLayer\ChatService\obj\Debug\ChatService.cs
 c:\Users\alek.hristov\Source\Repos\DALLayer\ChatService\obj\Debug\ChatService.dll
 c:\Users\alek.hristov\Source\Repos\DALLayer\ChatService\obj\Debug\ChatService.pdb
 c:\Users\alek.hristov\Source\Repos\DALLayer\ChatService\bin\Debug\ChatService.dll.config
-C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.csprojResolveAssemblyReference.cache
-C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.csproj.CoreCompileInputs.cache
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\ChatService.dll.config
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\ChatService.dll
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\ChatService.pdb
@@ -25,5 +23,7 @@ C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\Interface
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\ServiceModels.pdb
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\EntityFramework.xml
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.csprojResolveAssemblyReference.cache
+C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.csproj.CoreCompileInputs.cache
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.dll
 C:\Users\alek.hristov\Source\Repos\ChatSystemApp\ChatService\obj\Debug\ChatService.pdb

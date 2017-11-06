@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DTOs\ConversationDTO.cs" />
     <Compile Include="DTOs\MessageDTO.cs" />
+    <Compile Include="DTOs\Users_ConversationsDTO.cs" />
     <Compile Include="MapDTOToEntity.cs" />
     <Compile Include="MapEntityToDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
